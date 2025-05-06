@@ -1,0 +1,44 @@
+<div class="max-w-4xl mx-auto mt-6 px-4">
+<div class="bg-darkmode-light text-darkmode-text border border-darkmode-border/30 p-4 shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-all hover:shadow-[0_6px_18px_rgba(0,0,0,0.25)] rounded-xl">
+  {{ $image := .Params.image }}
+  {{ if $image }}
+    {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full rounded") }}
+  {{ end }}
+
+  <h4 class="mb-3 text-lg font-semibold">
+    <a href="{{ .RelPermalink }}" class="hover:underline hover:text-primary">
+      {{ .Title }}
+    </a>
+  </h4>
+
+  {{ $categories := .Params.categories }}
+  {{ if $categories }}
+    <ul class="mb-4 text-sm text-darkmode-text-light">
+      <li class="mr-4 inline-block">
+        <a href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/" class="hover:text-primary">
+          <i class="fa-regular fa-circle-user mr-2"></i>{{ .Params.author }}
+        </a>
+      </li>
+      <li class="mr-4 inline-block">
+        <i class="fa-regular fa-folder mr-1"></i>
+        {{ range $i, $p := $categories }}
+          <a
+            href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/"
+            class="ms-1 hover:text-primary"
+          >
+            {{ . | humanize }}{{ if ne $i (sub (len $categories) 1) }},{{ end }}
+          </a>
+        {{ end }}
+      </li>
+    </ul>
+  {{ end }}
+
+  <p class="mb-6 text-sm leading-relaxed text-darkmode-text-light">
+    {{ .Summary | plainify }}
+  </p>
+
+  <a class="inline-block text-sm px-4 py-2 border border-primary text-primary rounded hover:bg-primary hover:text-white transition-all" href="{{ .RelPermalink }}">
+    {{ T "read_more" }}
+  </a>
+</div>
+</div>

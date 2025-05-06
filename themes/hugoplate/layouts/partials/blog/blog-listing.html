@@ -1,0 +1,23 @@
+  <div class="bg-darkmode-light/60 text-darkmode-text border border-darkmode-border/30 p-4 shadow-[0_4px_12px_rgba(0,0,0,0.15)] transition-all hover:shadow-[0_6px_18px_rgba(0,0,0,0.25)]">
+  <div class="row">
+    <!-- blog posts -->
+    <div class="lg:col-8">
+      <div class="row">
+        {{ $paginator := .Paginate .RegularPages }}
+        {{ range $paginator.Pages }}
+          <div class="md:col-6 mb-14 rounded-xl">
+            {{ partial "components/blog-card" . }}
+          </div>
+        {{ end }}
+      </div>
+      {{ partial "components/pagination.html" . }}
+    </div>
+    <!-- sidebar -->
+{{/*    <div class="lg:col-4">*/}}
+    <div class="lg:col-4 bg-darkmode-body/80 border border-darkmode-border/20 rounded-xl p-6 shadow-[inset_0_0_4px_rgba(0,0,0,0.3)]">
+      <!-- widget -->
+      {{ $widget := site.Params.widgets.sidebar }}
+      {{ partialCached "widgets/widget-wrapper" ( dict "Widgets" $widget "Scope" . ) }}
+    </div>
+  </div>
+</div>

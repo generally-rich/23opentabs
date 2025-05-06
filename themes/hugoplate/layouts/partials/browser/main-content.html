@@ -1,0 +1,64 @@
+<div class="container max-w-4xl mx-auto mt-6 p-6 bg-darkmode-light/60 border border border-darkmode-border/30 rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.15)] bg-gradient-to-b from-[rgba(255,255,255,0.02)] to-transparent">
+  <article class="max-w-none">
+    <h1 class="text-3xl font-bold mb-4">{{ .Title }}</h1>
+    <ul class="mb-6 text-sm text-gray-500 dark:text-gray-400 flex flex-wrap gap-4 ">
+      <li>
+        <i class="fa-regular fa-circle-user mr-1"></i>
+        <a href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/">{{ .Params.author }}</a>
+      </li>
+      {{ with .Params.categories }}
+        <li>
+          <i class="fa-regular fa-folder mr-1"></i>
+          {{ range $i, $p := . }}
+            <a href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/">{{ . | humanize }}</a>{{ if ne $i (sub (len .) 1) }}, {{ end }}
+          {{ end }}
+        </li>
+      {{ end }}
+      <li>
+        <i class="fa-regular fa-clock mr-1"></i>
+        {{ time.Format ":date_long" .PublishDate }}
+      </li>
+    </ul>
+
+      <div class="prose prose-invert">
+    <div class="mb-10 text-neutral-100 dark:text-neutral-100">
+      {{ partial "toc.html" (dict "Class" "blog" "Collapsed" true "TableOfContents" .TableOfContents ) }}
+      {{ .Content }}
+    </div>
+      </div>
+
+    {{ with .Params.tags }}
+      <div class="mb-10">
+        <h5 class="font-semibold mb-2">Tags:</h5>
+        <div class="flex flex-wrap gap-2">
+          {{ range . }}
+            <a href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/"
+               class="text-sm bg-dark hover:bg-primary text-white px-3 py-1">
+              {{ . | humanize }}
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+{{/*    {{ partial "social-share" (dict "Context" . "Class" "share-icons" "Title" .Title "Whatsapp" false "Telegram" false "Linkedin" false "Pinterest" false "Tumblr" false "Vk" false "Reddit" false) }}*/}}
+
+    {{ if site.Config.Services.Disqus.Shortname }}
+      <div class="mt-20">
+        {{ template "_internal/disqus.html" . }}
+      </div>
+    {{ end }}
+  </article>
+
+  {{ $related := .Site.RegularPages.Related . | first 10 | shuffle | first 3 }}
+  {{ with $related }}
+    <div class="mt-16">
+      <h2 class="text-2xl font-semibold mb-6">{{ T "related_posts" }}</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range . }}
+          {{ partial "components/blog-card" . }}
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+</div>
