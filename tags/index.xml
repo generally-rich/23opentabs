@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 23 Open Tabs</title>
+    <link>https://justrich.github.io/23opentabs/tags/</link>
+    <description>Recent content in Tags on 23 Open Tabs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 May 2025 00:00:00 +1000</lastBuildDate>
+    <atom:link href="https://justrich.github.io/23opentabs/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Example</title>
+      <link>https://justrich.github.io/23opentabs/tags/example/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +1000</pubDate>
+      <guid>https://justrich.github.io/23opentabs/tags/example/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Placeholder</title>
+      <link>https://justrich.github.io/23opentabs/tags/placeholder/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +1000</pubDate>
+      <guid>https://justrich.github.io/23opentabs/tags/placeholder/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
