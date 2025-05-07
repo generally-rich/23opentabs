@@ -2,7 +2,7 @@ backend:
   name: github
   repo: generally-rich/23opentabs
   branch: main
-  site_domain: https://23opentabs.com
+  site_domain: 23opentabs.com
   base_url: https://23opentabs.com
   auth_endpoint: /oauth
 media_folder: static/img
