@@ -4,7 +4,7 @@ backend:
   branch: main
   site_domain: https://23opentabs.com
   base_url: https://23opentabs.com
-  auth_endpoint: /oauth
+  auth_endpoint: /api/auth
 media_folder: static/img
 public_folder: /img
 collections:
