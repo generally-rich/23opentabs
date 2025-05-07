@@ -2,3 +2,5 @@ backend:
   name: github
   repo: generally-rich/23opentabs
   branch: main
+  base_url: https://decapcms-oauth-plumbing.rich-horwood.workers.dev
+  auth_endpoint: oauth
