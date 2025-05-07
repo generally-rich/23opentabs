@@ -1,7 +1,7 @@
 ---
 draft: false
 author: Rich Horwood
-title: A generic placeholder example page
+title: Blog post one
 date: 2025-05-04
 tags:
   - example
