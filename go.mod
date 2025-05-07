@@ -3,6 +3,7 @@ module hugoplate.netlify.app
 go 1.21
 
 require (
+	github.com/HugoBlox/hugo-blox-builder/modules/blox-plugin-decap-cms v0.1.1 // indirect
 	github.com/gethugothemes/hugo-modules/accordion v0.0.0-20250409040650-2f989f5e8ea1 // indirect
 	github.com/gethugothemes/hugo-modules/adsense v0.0.0-20250409040650-2f989f5e8ea1 // indirect
 	github.com/gethugothemes/hugo-modules/components/announcement v0.0.0-20250409040650-2f989f5e8ea1 // indirect
