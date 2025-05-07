@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: generally-rich/23opentabs
+  branch: main
+  site_domain: https://23opentabs.com
+  base_url: https://23opentabs.com
+  auth_endpoint: /oauth
+media_folder: static/img
+public_folder: /img
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content/english/blog'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
