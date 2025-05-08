@@ -16,7 +16,7 @@
 
   </head>
 
-  <body class="bg-body min-h-screen flex flex-col bg-body dark:bg-darkmode-body bg-opacity-45 transition-colors">
+  <body class="h-screen flex flex-col overflow-hidden bg-body dark:bg-darkmode-body bg-opacity-45 transition-colors">
     <!-- cache partial only in production -->
     {{ if hugo.IsProduction }}
       {{ partialCached "preloader.html" . }}
@@ -39,7 +39,7 @@
 {{/*    {{ partial "search-modal.html" (dict "Context" . ) }}*/}}
 
 
-    <main class="flex-frow overflow-y-auto">
+    <main class="flex-1 flex justify-center items-start">
       {{ block "main" . }}{{ end }}
     </main>
 

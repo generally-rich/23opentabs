@@ -1,5 +1,5 @@
 ---
 title: "Blog Posts"
 meta_title: ""
-description: "this is meta description"
+description: "23 Open Tabs Blog"
 ---
