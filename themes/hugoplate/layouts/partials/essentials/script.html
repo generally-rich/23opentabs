@@ -56,3 +56,24 @@
 
 <!-- cookie consent -->
 {{ partialCached "announcement-script.html" . }}
+
+<script>
+  const backBtn = document.getElementById('btn-back');
+  const reloadBtn = document.getElementById('btn-reload');
+  const homeBtn = document.getElementById('btn-home');
+
+  // Back: only if same-site
+  if (document.referrer.startsWith(window.location.origin)) {
+    backBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+    backBtn.addEventListener('click', () => history.back());
+  } else {
+    backBtn.classList.add('opacity-50', 'cursor-not-allowed');
+    backBtn.disabled = true;
+  }
+
+  // Reload
+  reloadBtn.addEventListener('click', () => location.reload());
+
+  // Home
+  homeBtn.addEventListener('click', () => location.href = '/');
+</script>
