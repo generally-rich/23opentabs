@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div id="landing" class="transition-opacity duration-700 opacity-100">
   <!-- Banner -->
   {{ with .Params.banner }}
     <section class="section pt-14">
@@ -25,6 +26,8 @@
               {{ end }}
             {{ end }}
           </div>
+
+
           <div class="col-12">
             {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
           </div>
@@ -138,7 +141,17 @@
           </div>
         </div>
       </section>
+      </div>
     {{ end }}
   {{ end }}
   <!-- /Testimonials -->
+<script>
+  setTimeout(() => {
+    const landing = document.getElementById('landing');
+    landing.classList.add('opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+      window.location.href = "/blog/";
+    }, 700); // match fade duration
+  }, 3000); // delay before fade
+</script>
 {{ end }}
