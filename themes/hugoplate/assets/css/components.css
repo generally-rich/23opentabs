@@ -10,6 +10,7 @@
 /* container */
 .container {
   @apply mx-auto xl:!max-w-[1320px] px-4;
+  @apply font-branding;
 }
 
 /* social icons */
