@@ -1,24 +1,30 @@
-    <div class="max-w-[95%] w-full flex flex-col rounded-xl border bg-dark shadow-lg overflow-hidden bg-neutral-900" style="height: calc(100vh - 4rem);">
-    <!-- STICKY BROWSER TAB BAR -->
-    <div class="flex items-center sticky top-0 z-20 bg-dark px-4 py-2 font-mono text-yellow-300 border-b border-border">
-      <div class="flex space-x-2">
-        <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
-        <span class="w-3 h-3 rounded-full bg-yellow-400/70"></span>
-        <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
-      </div>
-      <div class="ml-4 flex-grow flex overflow-x-auto">
-        <span class="px-3 py-1 text-sm text-yellow-300 bg-dark rounded-t-md whitespace-nowrap">Welcome</span>
-        <span class="px-3 py-1 text-sm font-semibold bg-primary text-body rounded-t-md border-b-2 border-light relative top-[2px] whitespace-nowrap">A generic placeholder example page</span>
-        <span class="px-3 py-1 text-sm text-yellow-300 bg-dark rounded-t-md whitespace-nowrap">About</span>
-      </div>
+<div class="max-w-[95%] w-full flex flex-col rounded-xl border bg-dark shadow-lg overflow-hidden bg-neutral-900" style="height: calc(100vh - 4rem);">
+  <!-- STICKY BROWSER TAB BAR -->
+  <div class="flex items-center sticky top-0 z-20 bg-dark px-4 py-2 font-mono text-yellow-300 border-b border-border">
+    <div class="flex space-x-2">
+      <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+      <span class="w-3 h-3 rounded-full bg-yellow-400/70"></span>
+      <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
     </div>
-
-    <!-- SCROLLABLE CONTENT AREA -->
-    <div class="flex-1 overflow-y-auto p-6">
-      <div class="bg-darkmode-body text-darkmode-text border border-darkmode-border shadow-lg">
-        <div class="p-8 max-w-none">
-          {{ .Inner }}
-          {{ partial "essentials/footer.html" . }}
-        </div>
+    <div class="ml-4 flex-grow flex overflow-x-auto space-x-2">
+      <a href="/" class="px-3 py-1 text-sm text-yellow-300 bg-dark rounded-t-md whitespace-nowrap hover:bg-yellow-200 hover:text-black transition-colors duration-150">
+        Welcome
+      </a>
+      <div class="px-3 py-1 text-sm font-semibold bg-primary text-body rounded-t-md border-b-2 border-light relative top-[2px] whitespace-nowrap">
+        {{ .Title }}
+      </div>
+      <a href="/about/" class="px-3 py-1 text-sm text-yellow-300 bg-dark rounded-t-md whitespace-nowrap hover:bg-yellow-200 hover:text-black transition-colors duration-150">
+        About
+      </a>
     </div>
   </div>
+
+  <!-- SCROLLABLE CONTENT AREA -->
+  <div class="flex-1 overflow-y-auto p-6">
+    <div class="bg-darkmode-body text-darkmode-text border border-darkmode-border shadow-lg">
+      <div class="p-8 max-w-none">
+        {{ .Inner }}
+      </div>
+    </div>
+  </div>
+</div>
